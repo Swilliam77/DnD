@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<element name="Primal Summoner" type="Archetype" source="5e" id="ID_USER_ARCHETYPE_RANGER_PRIMAL_SUMMONER">
+		<supports>Ranger Archetype</supports>
+		<description>
+			<p>The Primal Summoner archetype embodies a spiritual connection between the peoples of the world and the beasts of the wild. As an emissary to the spirits of the wild, the ranger calls upon quintessential primal beasts to aid in the fight the monstrous foes that threaten civilization and the wilderness alike. To become a Primal Summoner means committing yourself to this ideal, working in partnership with a bestial avatar as its companion and friend.</p>
+			<p>This archetype is alternative to the Beast Master archetype. It replaces the Ranger's Companion feature with the Primal Companion feature. All other calss features from the Beast Master archetype are maintained.</p>
+			<div element="ID_USER_ARCHETYPEFEATURE_RANGER_PRIMAL_COMPANION" />
+			<div element="ID_WOTC_ARCHETYPEFEATURE_RANGER_EXCEPTIONAL_TRAINING" />
+			<div element="ID_WOTC_ARCHETYPEFEATURE_RANGER_BESTIAL_FURY" />
+			<div element="ID_WOTC_ARCHETYPEFEATURE_RANGER_SHARE_SPELLS" />
+		</description>
+		<sheet display="false">
+			<description>The Primal Summoner archetype embodies a spiritual connection between the peoples of the world and the beasts of the wild.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_USER_ARCHETYPEFEATURE_RANGER_PRIMAL_COMPANION" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_ARCHETYPEFEATURE_RANGER_EXCEPTIONAL_TRAINING" level="7" />
+			<grant type="Archetype Feature" id="ID_WOTC_ARCHETYPEFEATURE_RANGER_BESTIAL_FURY" level="11" />
+			<grant type="Archetype Feature" id="ID_WOTC_ARCHETYPEFEATURE_RANGER_SHARE_SPELLS" level="15" />
+		</rules>
+	</element>
+	<element name="Primal Companion" type="Archetype Feature" source="5e" id="ID_USER_ARCHETYPEFEATURE_RANGER_PRIMAL_COMPANION">
+		<description>
+			<p>You magically summon a primal beast, which draws strength from your bond with nature. The beast is friendly to you and your companions and obeys your commands. Choose its stat block-Beast of the Land, Beast of the Sea, or Beast of the Sky-which uses your proficiency bonus (PB) in several places. You also determine the kind of animal the beast is, choosing a kind appropriate for the stat block. Whatever kind you choose, the beast bears primal markings, indicating its mystical origin.</p>
+			<p class="indent">In combat, the beast acts during your turn. It can move and use its reaction on its own, but the only action it takes is the Dodge action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. You can also sacrifice one of your attacks when you take the Attack action to command the beast to take the Attack action. If you are incapacitated, the beast can take any action of its choice, not just Dodge.</p>
+			<p class="indent">If the beast has died within the last hour, you can use your action to touch it and expend a spell slot of 1st level or higher. The beast returns to life after 1 minute with all its hit points restored. When you finish a long rest, you can summon a different primal beast. The new beast appears in an unoccupied space within 5 feet of you, and you choose its stat block and appearance. If you already have a beast from this feature, it vanishes when the new beast appears. The beast also vanishes if you die.</p>
+		</description>
+		<sheet>
+			<description>In combat, the beast acts during your turn. It can move and use its reaction on its own, but the only action it takes is the Dodge action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. You can also sacrifice one of your attacks when you take the Attack action to command the beast to take the Attack action. If you are incapacitated, the beast can take any action of its choice, not just Dodge. If the beast has died within the last hour, you can use your action to touch it and expend a spell slot of 1st level or higher. The beast returns to life after 1 minute with all its hit points restored. When you finish a long rest, you can summon a different primal beast. The new beast appears in an unoccupied space within 5 feet of you, and you choose its stat block and appearance. If you already have a beast from this feature, it vanishes when the new beast appears. The beast also vanishes if you die.</description>
+		</sheet>
+		<rules>
+			<select type="Companion" name="Primal Companion" supports="Primal Beast" />
+			<stat name="companion:ac" value="proficiency" />
+			<stat name="companion:attack" value="proficiency" />
+			<stat name="companion:damage" value="proficiency" />
+		</rules>
+	</element>
+	<element name="Beast of the Land" type="Companion" source="5e" id="ID_USER_COMPANION_LAND_BEAST">                     
+		<description />
+		<setters>
+			<set name="strength">14</set>
+			<set name="dexterity">14</set>
+			<set name="constitution">15</set>
+			<set name="intelligence">8</set>
+			<set name="wisdom">14</set>
+			<set name="charisma">11</set>
+			<set name="ac">13</set>
+			<set name="hp">5</set>
+			<set name="speed">40 ft., climb 40 ft.</set>
+			<set name="senses">darkvision 60 ft.</set>
+			<set name="languages">Understands the languages you speak.</set>
+			<set name="type">Primal Beast</set>
+			<set name="size">Medium</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">-</set>
+			<set name="traits">ID_USER_COMPANION_TRAIT_PRIMAL_BEAST_PRIMAL_BOND, ID_USER_COMPANION_TRAIT_LAND_BEAST_CHARGE</set>
+			<set name="actions">ID_USER_COMPANION_ACTION_LAND_BEAST_MAUL</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="13" />
+			<stat name="companion:hp:max" value="5" bonus="base" />
+			<stat name="additional:hp:max" value="level:ranger" />
+			<stat name="additional:hp:max" value="level:ranger" />
+			<stat name="additional:hp:max" value="level:ranger" />
+			<stat name="additional:hp:max" value="level:ranger" />
+			<stat name="additional:hp:max" value="level:ranger" />
+			<stat name="companion:hp:max" value="additional:hp:max" bonus="base" />
+			<stat name="companion:speed" value="40" bonus="base" />
+			<stat name="companion:speed:climb" value="40" bonus="base" />
+		</rules>
+	</element>
+	<element name="Beast of the Sea" type="Companion" source="5e" id="ID_USER_COMPANION_SEA_BEAST">
+		<description />
+		<setters>
+			<set name="strength">14</set>
+			<set name="dexterity">14</set>
+			<set name="constitution">15</set>
+			<set name="intelligence">8</set>
+			<set name="wisdom">14</set>
+			<set name="charisma">11</set>
+			<set name="ac">13</set>
+			<set name="hp">5</set>
+			<set name="speed">5 ft., swim 60 ft.</set>
+			<set name="senses">darkvision 60 ft.</set>
+			<set name="languages">Understands the languages you speak.</set>
+			<set name="type">Primal Beast</set>
+			<set name="size">Medium</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">-</set>
+			<set name="traits">ID_USER_COMPANION_TRAIT_PRIMAL_BEAST_PRIMAL_BOND, ID_USER_COMPANION_TRAIT_SEA_BEAST_AMPHIBIOUS</set>
+			<set name="actions">ID_USER_COMPANION_ACTION_SEA_BEAST_BLINDING_STRIKE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="13" />
+			<stat name="companion:hp:max" value="5" bonus="base" />
+			<stat name="additional:hp:max" value="level:ranger" />
+			<stat name="additional:hp:max" value="level:ranger" />
+			<stat name="additional:hp:max" value="level:ranger" />
+			<stat name="additional:hp:max" value="level:ranger" />
+			<stat name="additional:hp:max" value="level:ranger" />
+			<stat name="companion:hp:max" value="additional:hp:max" bonus="base" />
+			<stat name="companion:speed" value="5" bonus="base" />
+			<stat name="companion:speed:swim" value="60" bonus="base" />
+		</rules>
+	</element>
+	<element name="Beast of the Sky" type="Companion" source="5e" id="ID_USER_COMPANION_SKY_BEAST">
+		<description />
+		<setters>
+			<set name="strength">6</set>
+			<set name="dexterity">16</set>
+			<set name="constitution">13</set>
+			<set name="intelligence">8</set>
+			<set name="wisdom">14</set>
+			<set name="charisma">11</set>
+			<set name="ac">13</set>
+			<set name="hp">4</set>
+			<set name="speed">10 ft., fly 60 ft.</set>
+			<set name="senses">darkvision 60 ft.</set>
+			<set name="languages">Understands the languages you speak.</set>
+			<set name="type">Primal Beast</set>
+			<set name="size">Medium</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">-</set>
+			<set name="traits">ID_USER_COMPANION_TRAIT_PRIMAL_BEAST_PRIMAL_BOND, ID_USER_COMPANION_TRAIT_SKY_BEAST_FLYBY</set>
+			<set name="actions">ID_USER_COMPANION_ACTION_SKY_BEAST_SHRED</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="13" />
+			<stat name="companion:hp:max" value="4" bonus="base" />
+			<stat name="additional:hp:max" value="level:ranger" />
+			<stat name="additional:hp:max" value="level:ranger" />
+			<stat name="additional:hp:max" value="level:ranger" />
+			<stat name="additional:hp:max" value="level:ranger" />
+			<stat name="companion:hp:max" value="additional:hp:max" bonus="base" />
+			<stat name="companion:speed" value="10" bonus="base" />
+			<stat name="companion:speed:fly" value="60" bonus="base" />
+		</rules>
+	</element>
+	<element name="Primal Bond" type="Companion Trait" source="5e" id="ID_USER_COMPANION_TRAIT_PRIMAL_BEAST_PRIMAL_BOND">
+		<description>
+			<p>You can add your proficiency bonus to any ability check or saving throw that the beast makes.</p>
+		</description>
+		<sheet>
+			<description>You can add your proficiency bonus to any ability check or saving throw that the beast makes.</description>
+		</sheet>
+	</element>
+	<element name="Charge" type="Companion Trait" source="5e" id="ID_USER_COMPANION_TRAIT_LAND_BEAST_CHARGE">
+		<description>
+			<p>If the beast moves at least 20 feet straight toward a target and then hits it with a maul attack on the same turn, the target takes an extra ld6 slashing damage. If the target is a creature, it must succeed on a Strength saving throw against your spell save DC or be knocked prone.</p>
+		</description>
+		<sheet>
+			<description>If the beast moves at least 20 feet straight toward a target and hits it with a maul attack, it deals an extra ld6 slashing damage. If the target is a creature, it must succeed on a Strength saving throw against your spell save DC or be knocked prone.</description>
+		</sheet>
+	</element>
+	<element name="Amphibious" type="Companion Trait" source="5e" id="ID_USER_COMPANION_TRAIT_SEA_BEAST_AMPHIBIOUS">
+		<description>
+			<p>The beast can breathe both air and water.</p>
+		</description>
+		<sheet>
+			<description>The beast can breathe both air and water.</description>
+		</sheet>
+	</element>
+	<element name="Flyby" type="Companion Trait" source="5e" id="ID_USER_COMPANION_TRAIT_SKY_BEAST_FLYBY">
+		<description>
+			<p>The beast doesn't provoke opportunity attacks when it flies out of an enemy's reach.</p>
+		</description>
+		<sheet>
+			<description>The beast doesn't provoke opportunity attacks when it flies out of an enemy's reach.</description>
+		</sheet>
+	</element>
+	<element name="Maul" type="Companion Action" source="5e" id="ID_USER_COMPANION_ACTION_LAND_BEAST_MAUL">
+		<description>
+			<p>Melee Weapon Attack: Your spell attack modifier to hit, reach 5 ft., one target. Hit: 1d8 + 2 + PB slashing or piercing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: Your spell attack modifier to hit, reach 5 ft., one target. Hit: 1d8 + 2 + PB slashing or piercing damage.</description>
+		</sheet>
+	</element>
+	<element name="Blinding Strike" type="Companion Action" source="5e" id="ID_USER_COMPANION_ACTION_SEA_BEAST_BLINDING_STRIKE">
+		<description>
+			<p>Melee Weapon Attack: Your spell attack modifier to hit, reach 5 ft., one target. Hit: 1d6 + 2 + PB piercing or bludgeoning damage, and the target is grappled (escape DC equals your spell save DC). Until this grapple ends, the beast can't use this attack on another target.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: Your spell attack modifier to hit, reach 5 ft., one target. Hit: 1d6 + 2 + PB piercing or bludgeoning damage, and the target is grappled (escape DC equals your spell save DC). Until this grapple ends, the beast can't use this attack on another target.</description>
+		</sheet>
+	</element>
+	<element name="Shred" type="Companion Action" source="5e" id="ID_USER_COMPANION_ACTION_SKY_BEAST_SHRED">
+		<description>
+			<p>Melee Weapon Attack: Your spell attack modifier to hit, reach 5 ft., one target. Hit: 1d4 + 3 + PB slashing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: Your spell attack modifier to hit, reach 5 ft., one target. Hit: 1d4 + 3 + PB slashing damage.</description>
+		</sheet>
+	</element>
+</elements>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+  <element name="Thrown Weapon Fighting" type="Class Feature" source="5e" id="ID_USER_CLASSFEATURE_FIGHTING_STYLE_TWF">
+		<supports>Fighting Style,Ranger</supports>
+		<description>
+			<p>You can draw a weapon that has the thrown property as part of the attack you make with the weapon. In addition, when you hit with a ranged attack using a thrown weapon, you gain a +2 bonus to the damage roll.</p>
+		</description>
+	</element>
+	<element name="Blind Fighting" type="Class Feature" source="5e" id="ID_USER_CLASSFEATURE_FIGHTING_STYLE_BF">
+		<supports>Fighting Style,Ranger,Fighter,Monk</supports>
+		<description>
+			<p>You have blind sight with a range of 10 feet. Within that range, you can effectively see anything that isn't behind total cover, even if you're blinded or in darkness. Moreover, you can see an invisible creature within that range, unless the creature successfully hides from you.</p>
+		</description>
+	</element>
+		<element name="Druidic Warrior" type="Class Feature" source="5e" id="ID_USER_CLASSFEATURE_FIGHTING_STYLE_DW">
+		<supports>Fighting Style,Ranger</supports>
+		<description>
+			<p>You learn two cantrips of your choice from the Druid spell list. They count as ranger spells for you, and Wisdom is your spellcasting ability for them. Whenever you gain a level in this class, you can replace one of these cantrips with another cantrip from the Druid spell list.</p>
+		</description>
+		<spellcasting name="Druidic Warrior" ability="Wisdom" prepare="false">
+			<list>Druid</list>
+		</spellcasting>
+		<rules>
+			<select type="Spell" name="Cantrip (Druid)" supports="$(spellcasting:list), 0" level="2" number="2" spellcasting="Druidic Warrior" />
+		</rules>
+	</element>
+	<element name="Interception" type="Class Feature" source="5e" id="ID_USER_CLASSFEATURE_FIGHTING_STYLE_INT">
+		<supports>Fighting Style,Ranger,Fighter,Monk</supports>
+		<description>
+			<p>When a creature you can see hits a target that is within 5 feet of you with an attack, you can use your reaction to reduce the damage the target takes by 1d10 + your proficiency bonus (to a minimum of 0 damage). You must be wielding a shield or a simple or martial weapon to use this reaction.</p>
+		</description>
+	</element>
+	<element name="Unarmed Fighting" type="Class Feature" source="5e" id="ID_USER_CLASSFEATURE_FIGHTING_STYLE_UAF">
+		<supports>Fighting Style,Ranger,Fighter,Monk</supports>
+		<description>
+			<p>Your unarmed strikes can deal bludgeoning damage equal to 1d6 + your Strength modifier. If you strike with two free hands, the d6 becomes a d8. When you successfully start a grapple, you can deal 1d4 bludgeoning damage to the grappled creature. Until the grapple ends, you can also deal this damage to the creature whenever you hit it with a melee attack.</p>
+		</description>
+	</element>
+</elements>
